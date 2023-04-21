@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*Stuff below is to setup custom styles / components */
+@layer base {
+  /* h1 {
+    @apply text-4xl text-white font-bold;
+  }
+  h2 {
+    @apply text-xl text-white;
+  } */
+}
+
+/* @layer components {
+  .btn-blue {
+    @apply bg-blue-500 py-2 px-4 rounded-xl text-white font-bold hover:bg-blue-700;
+  }
+} */
+
+/* .content-area {
+  @apply bg-green-200;
+  height: theme("spacing.128");
+} */
+
+/* @media screen(lg) {
+  body {
+    @apply bg-blue-800 text-white;
+  }
+} */
+
+
+.hero {
+  background-image: url('../images/mobile/image-hero.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 40rem;
+}
+
+@media screen and (min-width: 620px) {
+  .hero {
+    background-image: url('../images/desktop/image-hero.jpg');
+  }
+} 
+
+.link-hover {
+  @apply mx-2 px-4 my-1 border-b border-transparent group-hover:border-white;
+}
+
+.gallery-item {
+  @apply relative overflow-hidden;
+}
+
+.gallery-img-desktop {
+  @apply w-full hidden md:block group-hover:scale-110 transition ease-in duration-100
+}
+
+.gallery-overlay {
+  @apply absolute inset-0 bg-gradient-to-t from-gray-900 group-hover:bg-none group-hover:bg-white group-hover:opacity-60;
+}
+
+.gallery-text {
+  @apply absolute text-white text-2xl bottom-6 left-6 z-10 group-hover:scale-110 transition ease-in duration-100 group-hover:text-black;
+}
+
+#nav-btn {
+  cursor: pointer;
+  position: relative;
+  height: 15px;
+  width: 20px;
+  z-index: 50;
+}
+
+#nav-btn .top,
+#nav-btn .middle,
+#nav-btn .bottom {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  transition: all 0.3s;
+  transform: rotate(0deg);
+  /* transform: translateY(0px); */
+}
+
+#nav-btn .middle {
+  transform: translateY(7px);
+}
+
+#nav-btn .bottom {
+  transform: translateY(14px);
+}
+
+#nav-btn.open .top {
+  transform: rotate(135deg);
+}
+
+#nav-btn.open .middle {
+  display: none;
+}
+
+#nav-btn.open .bottom {
+  transform: rotate(-135deg);
+}
+
+#nav-btn.open,
+#nav-btn.open {
+  transform: translateY(7px);
+}
+
